@@ -68,12 +68,12 @@ const lazy = import('./lazy');
         'path.join',
         'crypto.createHash',
         'child_process.exec',
-        'window.localStorage',
+        'window.localStorage.getItem',
         'document.querySelector',
         'fetch',
         'XMLHttpRequest',
         'Buffer.from',
-        'process.env',
+        'process.env.NODE_ENV',
       ]) {
         assert.ok(apis.includes(expected), `missing API usage: ${expected}`);
       }
@@ -100,7 +100,7 @@ localStorage.setItem('k', 'v');
       const apis = result.apiUsages.map((usage) => usage.api);
       assert.ok(apis.includes('fs.promises.readFile'));
       assert.ok(apis.includes('fs.readFile'));
-      assert.ok(apis.includes('localStorage'));
+      assert.ok(apis.includes('localStorage.setItem'));
     },
   );
 });
