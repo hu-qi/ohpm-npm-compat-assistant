@@ -1,0 +1,54 @@
+{
+  "case": "sample-project",
+  "project": "sample-project",
+  "expected": {
+    "dependencies": [
+      { "name": "axios", "status": "replaced", "ohpm": "@ohos/axios" },
+      { "name": "lodash", "status": "replaced", "ohpm": "lodash" },
+      { "name": "dayjs", "status": "replaced", "ohpm": "dayjs" },
+      { "name": "crypto-js", "status": "replaced", "ohpm": "@ohos/crypto-js" },
+      { "name": "localforage", "status": "replaced", "ohpm": "@ohos.data.preferences" },
+      { "name": "react", "status": "missing" },
+      { "name": "express", "status": "missing" },
+      { "name": "sharp", "status": "missing" },
+      { "name": "sqlite3", "status": "replaced", "ohpm": "@ohos.data.relationalStore" },
+      { "name": "node-sass", "status": "missing" }
+    ],
+    "replaceableLibs": [
+      { "name": "axios", "ohpm": "@ohos/axios" },
+      { "name": "lodash", "ohpm": "lodash" },
+      { "name": "dayjs", "ohpm": "dayjs" },
+      { "name": "crypto-js", "ohpm": "@ohos/crypto-js" },
+      { "name": "localforage", "ohpm": "@ohos.data.preferences" },
+      { "name": "sqlite3", "ohpm": "@ohos.data.relationalStore" }
+    ],
+    "incompatibleApis": [
+      { "api": "fs", "file": "src/index.ts" },
+      { "api": "path", "file": "src/index.ts" },
+      { "api": "child_process", "file": "src/index.ts" },
+      { "api": "crypto", "file": "src/index.ts" },
+      { "api": "http", "file": "src/index.ts" },
+      { "api": "fs.readFile", "file": "src/index.ts" },
+      { "api": "fs.writeFileSync", "file": "src/index.ts" },
+      { "api": "path.join", "file": "src/index.ts" },
+      { "api": "crypto.createHash", "file": "src/index.ts" },
+      { "api": "crypto.randomBytes", "file": "src/index.ts" },
+      { "api": "child_process.exec", "file": "src/index.ts" },
+      { "api": "http.request", "file": "src/index.ts" },
+      { "api": "window.localStorage.setItem", "file": "src/index.ts" },
+      { "api": "document.querySelector", "file": "src/index.ts" },
+      { "api": "XMLHttpRequest", "file": "src/index.ts" },
+      { "api": "fetch", "file": "src/index.ts" },
+      { "api": "Buffer.from", "file": "src/index.ts" },
+      { "api": "process.env.NODE_ENV", "file": "src/index.ts" },
+      { "api": "fs", "file": "src/legacy.js" },
+      { "api": "child_process", "file": "src/legacy.js" },
+      { "api": "fs.promises.readFile", "file": "src/legacy.js" },
+      { "api": "child_process.exec", "file": "src/legacy.js" },
+      { "api": "window.localStorage.getItem", "file": "src/legacy.js" },
+      { "api": "WebSocket", "file": "src/legacy.js" },
+      { "api": "*.node", "file": "src/native.ts" }
+    ],
+    "missingLibs": ["react", "express", "sharp", "node-sass"]
+  }
+}
