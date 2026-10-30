@@ -1,0 +1,40 @@
+{
+  "name": "ohpm-npm-compat-assistant",
+  "version": "0.1.0",
+  "description": "OHPM/NPM 三方库兼容性扫描与适配助手：扫描依赖与源码调用，识别不兼容 API，推荐 OHPM 替代库并输出结构化迁移报告",
+  "keywords": [
+    "harmonyos",
+    "ohpm",
+    "npm",
+    "compatibility",
+    "migration",
+    "cli"
+  ],
+  "license": "MIT",
+  "bin": {
+    "ohpm-compat": "dist/src/cli/index.js"
+  },
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/copy-data.mjs",
+    "test": "npm run build && node --test dist/tests/*.test.js",
+    "scan": "node dist/src/cli/index.js scan",
+    "suggest": "node dist/src/cli/index.js suggest",
+    "accuracy": "node dist/src/cli/index.js accuracy",
+    "matrix:check": "node dist/src/cli/index.js matrix --check",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0"
+  }
+}
